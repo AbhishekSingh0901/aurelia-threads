@@ -1,6 +1,6 @@
 .category-container {
-  min-width: 30%;
-  height: 240px;
+  min-width: 32%;
+  height: 40vh;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
@@ -10,16 +10,48 @@
   margin: 0 7.5px 15px;
   overflow: hidden;
 
+  .background-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    color: #dbdbdb;
+    -webkit-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+  }
+
+  p {
+    margin: 0;
+    font-weight: lighter;
+    font-size: 14px;
+    color: #929292;
+    -webkit-transition: color 0.3s ease-out;
+    transition: color 0.3s ease-out;
+  }
   &:hover {
     cursor: pointer;
 
     & .background-image {
-      transform: scale(1.05);
-      transition: transform 0.4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      transform: scale(1.1);
     }
 
     & .category-body-container {
       opacity: 0.9;
+    }
+
+    & p {
+      color: rgb(250, 184, 4);
+    }
+
+    & h2 {
+      color: rgb(250, 184, 4);
     }
   }
 
@@ -35,15 +67,8 @@
     margin-left: 7.5px;
   }
 
-  .background-image {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-
   .category-body-container {
-    padding: 30px;
+    padding: 15px 25px;
     display: block;
     display: flex;
     flex-direction: column;
@@ -52,23 +77,8 @@
     border-radius: 10px;
     background: rgba(0, 0, 0, 0.5);
     box-shadow: 0 4px 30px rgba(8, 8, 8, 0.3);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     position: absolute;
-
-    h2 {
-      margin: 0;
-      font-weight: bold;
-      font-size: 22px;
-      color: #ffffff;
-    }
-
-    p {
-      margin: 0;
-      font-weight: lighter;
-      font-size: 16px;
-      color: #ffffff;
-    }
   }
 }
