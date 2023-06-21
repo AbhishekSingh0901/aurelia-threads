@@ -1,11 +1,11 @@
 import { useState, Fragment } from "react";
-import Input from "../ui/input/input.component";
-import "./sign-up-form.styles.scss";
 import {
   createAuthUserWIthEmailAndPassword,
   createUserDocFromAuth,
 } from "../../utils/firebase/firebase.utils";
+import Input from "../ui/input/input.component";
 import Button from "../ui/sign-button/sign.component";
+import "./sign-up-form.styles.scss";
 
 const defaultformFields = {
   displayName: "",
@@ -34,7 +34,7 @@ const SignUpForm = () => {
         email,
         password
       );
-      console.log(user);
+      // console.log(user);
       await createUserDocFromAuth(user, { displayName });
       restFormFields();
     } catch (error) {
@@ -50,7 +50,7 @@ const SignUpForm = () => {
 
   return (
     <Fragment>
-      <p>signUp to your account to checkout, place and track your orders</p>
+      <p>Log in to your account to checkout, place and track your orders</p>
       <form onSubmit={handleSubmit}>
         <Input
           type="text"

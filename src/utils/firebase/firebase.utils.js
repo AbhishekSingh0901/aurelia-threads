@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
@@ -25,6 +27,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+// eslint-disable-next-line no-unused-vars
 const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
@@ -33,13 +36,8 @@ googleProvider.setCustomParameters({
 });
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => {
-  return signInWithPopup(auth, googleProvider)
-    .then((result) => {
-      alert("Logged in ", result);
-    })
-    .catch((error) => alert("caught error poppup closed"));
-};
+export const signInWithGooglePopup = () =>
+  signInWithPopup(auth, googleProvider);
 
 export const db = getFirestore();
 
@@ -86,3 +84,8 @@ export const signInAuthUserWIthEmailAndPassword = async (email, password) => {
 
   return signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListner = (callback) =>
+  onAuthStateChanged(auth, callback);
