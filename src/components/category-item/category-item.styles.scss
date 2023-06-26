@@ -21,10 +21,14 @@
   h2 {
     margin: 0;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
     color: #dbdbdb;
     -webkit-transition: color 0.3s ease-out;
     transition: color 0.3s ease-out;
+
+    @media (min-width: 600px) {
+      font-size: 22px;
+    }
   }
 
   p {
