@@ -9,17 +9,17 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card-container">
       <div
-        className="background-img"
+        className="product-image"
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       />
       <div className="footer">
         <span className="name">{name}</span>
-        <span className="price">{price}$</span>
+        <span className="price">${price}</span>
       </div>
       <button onClick={addProductToCart} className="cart-button">
-        ADD TO CART
+        +
       </button>
     </div>
   );

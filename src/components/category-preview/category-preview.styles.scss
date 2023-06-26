@@ -1,0 +1,44 @@
+.category-preiview {
+  .heading {
+    text-align: center;
+    margin: 30px;
+    .title {
+      border-top: solid 2px #fab804;
+      border-bottom: solid 2px #000;
+      font-size: 32px;
+      color: #3b3b3b;
+      cursor: pointer;
+      letter-spacing: 25px;
+    }
+  }
+
+  .preview {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 30px;
+    margin: auto;
+    padding: 20px 40px;
+    row-gap: 30px;
+
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 10px;
+      column-gap: 10px;
+      row-gap: 30px;
+    }
+
+    @media (min-width: 750px) {
+      grid-template-columns: repeat(3, 1fr);
+      padding: 10px;
+      column-gap: 10px;
+      row-gap: 30px;
+    }
+
+    @media (min-width: 1150px) {
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 10px;
+      row-gap: 30px;
+    }
+  }
+}
